@@ -7,10 +7,9 @@
             不是debug模式并且当前版本有缓存
                 就不分析dex了 直接加载缓存出来
 
-        拿到所有文件后 按类名分类成ProviderGroup,IRouteRoot（分组）,IRouteGroup（具体的activity或者fragment）
-        用class构造出对象,执行load函数,build全部RouteMeta,把RouteMeta加载到Warehouse类下的静态map里
-        RouteMeta是具体的实体类
-
+        拿到所有文件后 按类名分类成interceptors,group（分组）,provider
+        group会用class构造出对象,执行load函数,Warehouse类下的静态map里会存着所有分组信息，KEY是组名，value是IRouteGroup的class，
+        里面存着这个分组下所有的activity和fragment路由信息
 
 ### 2.navigation 跳转
         build构造一个Postcard
